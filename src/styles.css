@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --paleorange: hsl(25, 100%, 94%);
+  --verydarkblue: hsl(220, 13%, 13%);
+  --darkgrayblue: hsl(219, 9%, 45%);
+  --grayblue: hsl(220, 14%, 75%);
+  --lightgrayblue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --mainfontsize: 16px;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.Header {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  gap: 50px;
+  border-bottom: 1px solid var(--grayblue);
+}
+
+.Menu {
+  flex: 1;
+}
+
+.Menu > ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.Menu > ul > li {
+  color: var(--darkgrayblue);
+  font-weight: 400;
+}
+
+.AvatarCart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Menu Hover */
+.Menu > ul > li:hover {
+  border-bottom: 4px solid var(--orange);
+  cursor: pointer;
+}
+
+#Avatar:hover {
+  border-radius: 30px;
+  border: 2px solid var(--orange);
+  cursor: pointer;
+}
+
+.ProductThumb > img:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+/* Main Content */
+.Content {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  gap: 60px;
+}
+
+.ContentImg {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+
+.ProductImg {
+  width: 500px;
+  border-radius: 10px;
+}
+
+.ProductThumb {
+  display: flex;
+  gap: 33px;
+}
+
+.ThumbImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+/* .ThumbImg:first-of-type {
+  border: 3px solid var(--orange);
+  opacity: 65%;
+} */
+
+.ThumbOpacity {
+  border: 3px solid var(--orange);
+  opacity: 65%;
+}
+
+.ProductDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+  padding: 5rem;
+}
+
+.ProductDescTitle {
+  color: var(--orange);
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+
+.ProductMainTitle {
+  font-size: 48px;
+  color: var(--black);
+}
+
+.ProductDesc > p {
+  color: var(--darkgrayblue);
+  line-height: 30px;
+}
+
+.Price {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.Price > p:first-of-type {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.Price > p:last-of-type {
+  background-color: var(--paleorange);
+  color: var(--orange);
+  border-radius: 3px;
+  padding: 3px;
+  font-weight: 700;
+}
+
+.ProductCount {
+  display: flex;
+  gap: 25px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.ProductCounter {
+  display: flex;
+  background-color: var(--lightgrayblue);
+  padding: 10px;
+  align-items: center;
+  gap: 40px;
+  border-radius: 5px;
+}
+
+.ProductCounterButton {
+  border: none;
+  background-color: var(--lightgrayblue);
+  color: var(--orange);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ProductCounterButton:hover {
+  cursor: pointer;
+}
+
+.ProductCounter > p {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.ProductCartButton {
+  padding: 15px;
+  flex: 1;
+  border: none;
+  background-color: var(--orange);
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: var(--orange) 0px 50px 100px -20px,
+    var(--orange) 0px 30px 60px -30px;
+}
+
+.ProductCartButton > p {
+  color: var(--white);
+  font-size: 14px;
+  text-align: center;
+}
+
+.ProductCartButton:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.Arrow,
+.ArrowDown {
+  display: none;
+}
+
+.MenuMobile {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .Menu {
+    display: none;
+  }
+  #Logo {
+    margin-left: -15%;
+  }
+  .MenuMobile {
+    display: block;
+  }
+  .Container {
+    gap: 0px;
+  }
+  .Header {
+    width: 100vw;
+    gap: 0px;
+    justify-content: space-between;
+    border-bottom: 0px;
+  }
+  #Avatar {
+    width: 40px;
+  }
+  #Cart {
+    width: 20px;
+  }
+  .Content {
+    flex-direction: column;
+    width: 100vw;
+    gap: 20px;
+  }
+  .ProductImg {
+    width: 100vw;
+    border-radius: 0;
+    position: relative;
+  }
+  .Arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 85%;
+    top: 35%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 50%;
+  }
+  .ArrowDown {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 85%;
+    top: 35%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 50%;
+  }
+  .ProductThumb {
+    display: none;
+  }
+  .ProductDesc {
+    width: 100vw;
+    padding: 10px;
+  }
+  .ProductCount {
+    flex-direction: column;
+    width: 90vw;
+  }
+  .ProductCounter {
+    width: 90vw;
+    justify-content: space-around;
+  }
+  .ProductCartButton {
+    width: 90vw;
+  }
+  .ProductMainTitle {
+    font-size: 32px;
+  }
+}
